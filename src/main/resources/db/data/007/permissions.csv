@@ -1,0 +1,13 @@
+id,name
+1,hotel:write
+2,hotel:read
+3,hotel:update
+4,hotel:delete
+5,room:write
+6,room:read
+7,room:update
+8,room:delete
+9,customer:write
+10,customer:read
+11,customer:update
+12,customer:delete
