@@ -1,5 +1,7 @@
 package com.piti.java.hotelbooking.model;
 
+import java.math.BigDecimal;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
@@ -9,28 +11,29 @@ import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
-import lombok.Data;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
-@Data
-@Table(name ="hotels")
+import lombok.Setter;
+
+@Getter
+@Setter
+@Table(name ="rooms")
 @Entity
 @AllArgsConstructor
 @NoArgsConstructor
-public class Hotel {
+public class Room extends BaseEntity{
+	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
-	private String name;
-	private String address;
-	private String description;
-	private Integer rating;
-	private String imageUrl;
+
+	private Integer roomNumber;
+	private String roomType;
+	private BigDecimal roomPrice;
+	private boolean availability;
 	
 	@ManyToOne(fetch = FetchType.LAZY)
-	@JoinColumn(name ="location_id", referencedColumnName = "id")
-	private Location location;
+	@JoinColumn(name ="hotel_id", referencedColumnName = "id")
+	private Hotel hotel;
 	
-	@ManyToOne
-	@JoinColumn(name = "owner_id")
-	private User owner;
 }

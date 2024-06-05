@@ -31,11 +31,15 @@ public class CustomUserDetailsService implements UserDetailsService{
 					.flatMap(role -> toStreamOfSimpleGrantedAuthority(role))
 					.collect(Collectors.toSet());
 
+		    /*
 	        return new org.springframework.security.core.userdetails.User(
 	                usernameOrEmail,
 	                user.getPassword(),
 	                authorities
 	        );
+	        */
+		    
+		  return new CustomUserDetails(user.getId(), user.getUsername(), user.getPassword(), authorities);
 	}
 	
 	

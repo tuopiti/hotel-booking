@@ -10,6 +10,7 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import com.piti.java.hotelbooking.dto.UserDTO;
+import com.piti.java.hotelbooking.exception.ResourceNotFoundException;
 import com.piti.java.hotelbooking.mapper.UserMapper;
 import com.piti.java.hotelbooking.model.Role;
 import com.piti.java.hotelbooking.model.User;
@@ -47,6 +48,11 @@ public class UserServiceImpl implements UserService{
         userRepository.save(user);
         
 		return "User created successfully";
+	}
+	
+	@Override
+	public User getUserById(Long id) {
+		return userRepository.findById(id).orElseThrow(() -> new ResourceNotFoundException("User", "id", id));
 	}
 
 	@Override

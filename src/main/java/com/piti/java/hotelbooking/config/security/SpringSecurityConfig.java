@@ -54,7 +54,7 @@ public class SpringSecurityConfig {
 	                  		   "/swagger-ui/**",
 	                		   "/bus/v3/api-docs/**",
 	                		   "/swagger-ui.html").permitAll();
-	                	 authorize.requestMatchers("/api/v1/auth/**").permitAll();
+	                	 authorize.requestMatchers("/api/v1/auth/**","/api/v1/hotel").permitAll();
 	                     authorize.requestMatchers(HttpMethod.OPTIONS).permitAll();
 	                    authorize.anyRequest().authenticated();
 	                }).httpBasic(Customizer.withDefaults());

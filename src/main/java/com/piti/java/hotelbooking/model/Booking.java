@@ -6,18 +6,20 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
-import lombok.Data;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 
-@Data
-@Table(name ="images")
+@Getter
+@Setter
 @Entity
+@Table(name = "bookings")
 @NoArgsConstructor
 @AllArgsConstructor
-public class Image {
+public class Booking{
+
 	@Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
-    private String name;
-    private String path;
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Long id;
+	private Boolean status;
 }
