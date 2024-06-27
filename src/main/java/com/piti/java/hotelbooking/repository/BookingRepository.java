@@ -7,4 +7,3 @@ import com.piti.java.hotelbooking.model.Booking;
 public interface BookingRepository extends JpaRepository<Booking, Long>{
 	
 }
-

@@ -17,7 +17,9 @@ import com.piti.java.hotelbooking.repository.BookingDetailRepository;
 import com.piti.java.hotelbooking.repository.BookingRepository;
 import com.piti.java.hotelbooking.repository.RoomRepository;
 import com.piti.java.hotelbooking.service.BookingService;
+import com.piti.java.hotelbooking.service.RoomService;
 
+import jakarta.transaction.Transactional;
 import lombok.AllArgsConstructor;
 
 @Service
@@ -27,10 +29,18 @@ public class BookingServiceImpl implements BookingService{
 	private BookingDetailRepository bookingDetailRepository;
 	private RoomRepository roomRepository;
 	private BookingMapper bookingMapper;
+	private RoomService roomService;
 
 	@Override
+	@Transactional
 	public void booking(BookingDTO bookingDTO) {
 		List<RoomBookingDTO> roomBookingDTOs = bookingDTO.getRooms();
+		
+		/*
+	    if (roomBookingDTOs == null || roomBookingDTOs.isEmpty()) {
+	    	 throw new IllegalArgumentException("Rooms list cannot be null or empty");
+	    }	
+	    */
 		
 		List<Long> roomIds = roomBookingDTOs.stream()
 				.map(RoomBookingDTO::getRoomId)
@@ -48,6 +58,10 @@ public class BookingServiceImpl implements BookingService{
 		//save booking details
 		for (RoomBookingDTO bookingDTOs : roomBookingDTOs) {
 			Room room = roomMap.get(bookingDTOs.getRoomId());
+			/*
+			Long roomId = bookingDTOs.getRoomId();
+			Room room = roomService.getById(roomId);
+			*/
 			BookingDetail bookingDetail = bookingMapper.toBookingDetail(bookingDTOs, booking, room.getRoomPrice());			
 			bookingDetailRepository.save(bookingDetail);
 		}
@@ -55,4 +69,3 @@ public class BookingServiceImpl implements BookingService{
 	}
 
 }
-

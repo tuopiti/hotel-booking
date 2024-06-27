@@ -18,14 +18,12 @@ import lombok.Setter;
 
 @Getter
 @Setter
-//@SuperBuilder
 @AllArgsConstructor
 @NoArgsConstructor
 @MappedSuperclass
 @EntityListeners(AuditingEntityListener.class)
 public class BaseEntity {
-	
-    @CreatedDate
+	@CreatedDate
     @Column(nullable = false, updatable = false)
     private LocalDateTime createdDate;
 

@@ -11,6 +11,7 @@ import com.piti.java.hotelbooking.model.Booking;
 import com.piti.java.hotelbooking.model.BookingDetail;
 import com.piti.java.hotelbooking.service.RoomService;
 
+
 @Mapper(componentModel = "spring", uses = {RoomService.class})
 public interface BookingMapper {
 	Booking toBooking(BookingDTO dto);
