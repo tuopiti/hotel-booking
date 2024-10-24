@@ -1,0 +1,552 @@
+{
+	"info": {
+		"_postman_id": "8c12b5d6-e617-40cc-a085-bfdcff40e5f3",
+		"name": "Hotel Management",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "22826674"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "Register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"piti\",\r\n    \"username\": \"piti\",\r\n    \"email\": \"tuopiti36@gmail.com\",\r\n    \"password\": \"piti123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/auth/register",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create User",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJwaXRpIiwiYXV0aG9yaXRpZXMiOlt7ImF1dGhvcml0eSI6IlJPTEVfU1VQRVJfQURNSU4ifSx7ImF1dGhvcml0eSI6ImN1c3RvbWVyOndyaXRlIn0seyJhdXRob3JpdHkiOiJob3RlbDpkZWxldGUifSx7ImF1dGhvcml0eSI6ImhvdGVsOnJlYWQifSx7ImF1dGhvcml0eSI6ImhvdGVsOnVwZGF0ZSJ9LHsiYXV0aG9yaXR5IjoiaG90ZWw6d3JpdGUifSx7ImF1dGhvcml0eSI6InJvb206ZGVsZXRlIn0seyJhdXRob3JpdHkiOiJyb29tOnJlYWQifSx7ImF1dGhvcml0eSI6InJvb206dXBkYXRlIn0seyJhdXRob3JpdHkiOiJyb29tOndyaXRlIn1dLCJpYXQiOjE3MTk0NzI2MzgsImV4cCI6MTcyMDA3NzQzOCwiaXNzIjoiaG90ZWxzLmJvb2tpbmcuY29tIn0.Rw3bDs82gx7CRizf4XRA5xRnu6CTt7KNnnwpiE6ofQPU4Ip8qio-M6ZfKl_DFYrK",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"dara\",\r\n    \"username\": \"dara\",\r\n    \"email\": \"dara@gmail.com\",\r\n    \"password\": \"dara123\",\r\n    \"roles\":[\r\n      \"3\",\r\n      \"2\"\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/user",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"user"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List User",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJwaXRpIiwiYXV0aG9yaXRpZXMiOlt7ImF1dGhvcml0eSI6IlJPTEVfQ1VTVE9NRVIifSx7ImF1dGhvcml0eSI6IlJPTEVfU1VQRVJfQURNSU4ifSx7ImF1dGhvcml0eSI6ImN1c3RvbWVyOndyaXRlIn0seyJhdXRob3JpdHkiOiJob3RlbDpkZWxldGUifSx7ImF1dGhvcml0eSI6ImhvdGVsOnJlYWQifSx7ImF1dGhvcml0eSI6ImhvdGVsOnVwZGF0ZSJ9LHsiYXV0aG9yaXR5IjoiaG90ZWw6d3JpdGUifSx7ImF1dGhvcml0eSI6InJvb206ZGVsZXRlIn0seyJhdXRob3JpdHkiOiJyb29tOnJlYWQifSx7ImF1dGhvcml0eSI6InJvb206dXBkYXRlIn0seyJhdXRob3JpdHkiOiJyb29tOndyaXRlIn1dLCJpYXQiOjE3MTk0NzAxOTIsImV4cCI6MTcyMDA3NDk5MiwiaXNzIjoiaG90ZWxzLmJvb2tpbmcuY29tIn0.M73rkfVH2EwAFjoIlVVIwYuQ3FZkjsuhM68clQAfFblzofah29pWeJ4Bk3c09AYS",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/user",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"user"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"usernameOrEmail\": \"bank\",\r\n    \"password\": \"bank123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/auth/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get User By Id",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJkYXJhIiwiYXV0aG9yaXRpZXMiOlt7ImF1dGhvcml0eSI6IlJPTEVfQ1VTVE9NRVIifSx7ImF1dGhvcml0eSI6InJvb206cmVhZCJ9XSwiaWF0IjoxNzE2MTg4MTU0LCJleHAiOjE3MTY3OTI5NTMsImlzcyI6ImhvdGVscy5ib29raW5nLmNvbSJ9.wRruW5pJHogbllK01XavztrQokNRVwOMnRx4v-ZBOFhej-L1xDTrCJBMcz6XSpMO",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/user/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"user",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Location",
+			"item": [
+				{
+					"name": "Create Location",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJwaXRpIiwiYXV0aG9yaXRpZXMiOlt7ImF1dGhvcml0eSI6IlJPTEVfU1VQRVJfQURNSU4ifSx7ImF1dGhvcml0eSI6ImN1c3RvbWVyOndyaXRlIn0seyJhdXRob3JpdHkiOiJob3RlbDpkZWxldGUifSx7ImF1dGhvcml0eSI6ImhvdGVsOnJlYWQifSx7ImF1dGhvcml0eSI6ImhvdGVsOnVwZGF0ZSJ9LHsiYXV0aG9yaXR5IjoiaG90ZWw6d3JpdGUifSx7ImF1dGhvcml0eSI6InJvb206ZGVsZXRlIn0seyJhdXRob3JpdHkiOiJyb29tOnJlYWQifSx7ImF1dGhvcml0eSI6InJvb206dXBkYXRlIn0seyJhdXRob3JpdHkiOiJyb29tOndyaXRlIn1dLCJpYXQiOjE3MTk0NzI2MzgsImV4cCI6MTcyMDA3NzQzOCwiaXNzIjoiaG90ZWxzLmJvb2tpbmcuY29tIn0.Rw3bDs82gx7CRizf4XRA5xRnu6CTt7KNnnwpiE6ofQPU4Ip8qio-M6ZfKl_DFYrK",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\" : \"Siem Reap\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/location",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"location"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Location By Id",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJwaXRpIiwiYXV0aG9yaXRpZXMiOlt7ImF1dGhvcml0eSI6IlJPTEVfQ1VTVE9NRVIifSx7ImF1dGhvcml0eSI6IlJPTEVfU1VQRVJfQURNSU4ifSx7ImF1dGhvcml0eSI6ImN1c3RvbWVyOndyaXRlIn0seyJhdXRob3JpdHkiOiJob3RlbDpkZWxldGUifSx7ImF1dGhvcml0eSI6ImhvdGVsOnJlYWQifSx7ImF1dGhvcml0eSI6ImhvdGVsOnVwZGF0ZSJ9LHsiYXV0aG9yaXR5IjoiaG90ZWw6d3JpdGUifSx7ImF1dGhvcml0eSI6InJvb206ZGVsZXRlIn0seyJhdXRob3JpdHkiOiJyb29tOnJlYWQifSx7ImF1dGhvcml0eSI6InJvb206dXBkYXRlIn0seyJhdXRob3JpdHkiOiJyb29tOndyaXRlIn1dLCJpYXQiOjE3MTk0NzAxOTIsImV4cCI6MTcyMDA3NDk5MiwiaXNzIjoiaG90ZWxzLmJvb2tpbmcuY29tIn0.M73rkfVH2EwAFjoIlVVIwYuQ3FZkjsuhM68clQAfFblzofah29pWeJ4Bk3c09AYS",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/location/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"location",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Hotel",
+			"item": [
+				{
+					"name": "Create Hotel",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJwaXRpIiwiYXV0aG9yaXRpZXMiOlt7ImF1dGhvcml0eSI6IlJPTEVfU1VQRVJfQURNSU4ifSx7ImF1dGhvcml0eSI6ImN1c3RvbWVyOndyaXRlIn0seyJhdXRob3JpdHkiOiJob3RlbDpkZWxldGUifSx7ImF1dGhvcml0eSI6ImhvdGVsOnJlYWQifSx7ImF1dGhvcml0eSI6ImhvdGVsOnVwZGF0ZSJ9LHsiYXV0aG9yaXR5IjoiaG90ZWw6d3JpdGUifSx7ImF1dGhvcml0eSI6InJvb206ZGVsZXRlIn0seyJhdXRob3JpdHkiOiJyb29tOnJlYWQifSx7ImF1dGhvcml0eSI6InJvb206dXBkYXRlIn0seyJhdXRob3JpdHkiOiJyb29tOndyaXRlIn1dLCJpYXQiOjE3MTk0NzI2MzgsImV4cCI6MTcyMDA3NzQzOCwiaXNzIjoiaG90ZWxzLmJvb2tpbmcuY29tIn0.Rw3bDs82gx7CRizf4XRA5xRnu6CTt7KNnnwpiE6ofQPU4Ip8qio-M6ZfKl_DFYrK",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"hotel name\",\r\n    \"address\": \"Kk\",\r\n    \"description\": \"Good\",\r\n    \"rating\": 5,\r\n    \"locationId\": 1,\r\n    \"ownerId\": 3\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/hotel",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"hotel"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Hotel By Id",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJwaXRpIiwiYXV0aG9yaXRpZXMiOlt7ImF1dGhvcml0eSI6IlJPTEVfQ1VTVE9NRVIifSx7ImF1dGhvcml0eSI6IlJPTEVfU1VQRVJfQURNSU4ifSx7ImF1dGhvcml0eSI6ImN1c3RvbWVyOndyaXRlIn0seyJhdXRob3JpdHkiOiJob3RlbDpkZWxldGUifSx7ImF1dGhvcml0eSI6ImhvdGVsOnJlYWQifSx7ImF1dGhvcml0eSI6ImhvdGVsOnVwZGF0ZSJ9LHsiYXV0aG9yaXR5IjoiaG90ZWw6d3JpdGUifSx7ImF1dGhvcml0eSI6InJvb206ZGVsZXRlIn0seyJhdXRob3JpdHkiOiJyb29tOnJlYWQifSx7ImF1dGhvcml0eSI6InJvb206dXBkYXRlIn0seyJhdXRob3JpdHkiOiJyb29tOndyaXRlIn1dLCJpYXQiOjE3MTU3NTM4MjAsImV4cCI6MTcxNjM1ODYyMCwiaXNzIjoiaG90ZWxzLmJvb2tpbmcuY29tIn0.-SrcCJ5uJ4igoZrPJZlAD1WSmN_wlDX4TYC1_zx6KnHMuoR0nyYtrKA-X7B-WbXN",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/hotel/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"hotel",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Hotels",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJwaXRpIiwiYXV0aG9yaXRpZXMiOlt7ImF1dGhvcml0eSI6IlJPTEVfU1VQRVJfQURNSU4ifSx7ImF1dGhvcml0eSI6ImN1c3RvbWVyOndyaXRlIn0seyJhdXRob3JpdHkiOiJob3RlbDpkZWxldGUifSx7ImF1dGhvcml0eSI6ImhvdGVsOnJlYWQifSx7ImF1dGhvcml0eSI6ImhvdGVsOnVwZGF0ZSJ9LHsiYXV0aG9yaXR5IjoiaG90ZWw6d3JpdGUifSx7ImF1dGhvcml0eSI6InJvb206ZGVsZXRlIn0seyJhdXRob3JpdHkiOiJyb29tOnJlYWQifSx7ImF1dGhvcml0eSI6InJvb206dXBkYXRlIn0seyJhdXRob3JpdHkiOiJyb29tOndyaXRlIn1dLCJpYXQiOjE3Mjk3NDA2NzIsImV4cCI6MTczMDM0NTQ3MiwiaXNzIjoiaG90ZWxzLmJvb2tpbmcuY29tIn0.NAXcquC9V4ViwKsf6lsqJUkov-Xz9Gfkf9iTtg3qSCV3GZ8dblbYJufhfCBr2MQj",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/hotel?_page=1&_limit=5",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"hotel"
+							],
+							"query": [
+								{
+									"key": "_page",
+									"value": "1"
+								},
+								{
+									"key": "_limit",
+									"value": "5"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Room",
+			"item": [
+				{
+					"name": "Create Room",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJ0b2xhIiwiYXV0aG9yaXRpZXMiOlt7ImF1dGhvcml0eSI6IlJPTEVfQ1VTVE9NRVIifSx7ImF1dGhvcml0eSI6InJvb206cmVhZCJ9XSwiaWF0IjoxNzE2MTkxNDYyLCJleHAiOjE3MTY3OTYyNjIsImlzcyI6ImhvdGVscy5ib29raW5nLmNvbSJ9.iiUZklBDDpDw1u-ORFEqHW6m90uMHqylwpNyECRJ5aLJQjepXph7O7k2WPyr8DAU",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"roomNumber\": 201,\r\n    \"roomType\": \"double bed\",\r\n    \"roomPrice\": 15,\r\n    \"availability\": true,\r\n    \"hotelId\": 2\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/room",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"room"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Room By Id",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJkYXJhIiwiYXV0aG9yaXRpZXMiOlt7ImF1dGhvcml0eSI6IlJPTEVfQURNSU4ifSx7ImF1dGhvcml0eSI6IlJPTEVfQ1VTVE9NRVIifSx7ImF1dGhvcml0eSI6ImN1c3RvbWVyOndyaXRlIn0seyJhdXRob3JpdHkiOiJyb29tOmRlbGV0ZSJ9LHsiYXV0aG9yaXR5Ijoicm9vbTpyZWFkIn0seyJhdXRob3JpdHkiOiJyb29tOnVwZGF0ZSJ9LHsiYXV0aG9yaXR5Ijoicm9vbTp3cml0ZSJ9XSwiaWF0IjoxNzE5NDc0MjA2LCJleHAiOjE3MjAwNzkwMDYsImlzcyI6ImhvdGVscy5ib29raW5nLmNvbSJ9.EhEp_T14BzDfH6EP2QaFfIdOUC0F_pbDWTZ0MX60SaF_e5E1EynJ77d4uBt9yvGu",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/room/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"room",
+								"2"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Booking",
+			"item": [
+				{
+					"name": "Save Booking",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJ0aGlkYSIsImF1dGhvcml0aWVzIjpbeyJhdXRob3JpdHkiOiJST0xFX0NVU1RPTUVSIn0seyJhdXRob3JpdHkiOiJyb29tOnJlYWQifV0sImlhdCI6MTcyOTc0MTkwOSwiZXhwIjoxNzMwMzQ2NzA5LCJpc3MiOiJob3RlbHMuYm9va2luZy5jb20ifQ.PR_AmTxxboh5RTKrESbg2-ISj94rnbR-yA03b_ORDWfGNgOc5F7QRG3HPSC4f_p0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"rooms\": [\r\n        {\r\n            \"roomId\": 3,\r\n            \"numberOfGuest\": 2,\r\n            \"checkInDate\":\"2024-10-24\",\r\n            \"checkOutDate\":\"2024-10-25\"\r\n        },\r\n        {\r\n            \"roomId\": 4,\r\n            \"numberOfGuest\": 1,\r\n            \"checkInDate\":\"2024-10-24\",\r\n            \"checkOutDate\":\"2024-10-25\"\r\n        }\r\n    ],\r\n    \"bookingDate\": \"2024-10-24T00:00\",\r\n    \"status\": true\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/booking",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"booking"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Reporting",
+			"item": [
+				{
+					"name": "Daily Booking",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJiYW5rIiwiYXV0aG9yaXRpZXMiOlt7ImF1dGhvcml0eSI6IlJPTEVfQURNSU4ifSx7ImF1dGhvcml0eSI6ImN1c3RvbWVyOndyaXRlIn0seyJhdXRob3JpdHkiOiJyb29tOmRlbGV0ZSJ9LHsiYXV0aG9yaXR5Ijoicm9vbTpyZWFkIn0seyJhdXRob3JpdHkiOiJyb29tOnVwZGF0ZSJ9LHsiYXV0aG9yaXR5Ijoicm9vbTp3cml0ZSJ9XSwiaWF0IjoxNzI5Nzg3NTc2LCJleHAiOjE3MzAzOTIzNzUsImlzcyI6ImhvdGVscy5ib29raW5nLmNvbSJ9.-PPKPhmRUn0TRE6mMwO0XXYfO-MJlPTHaA-MXtRIW-vSHds4_xhAIV_ICRZWvIr8",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/reports/bookings?bookingDate=2024-10-24",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"reports",
+								"bookings"
+							],
+							"query": [
+								{
+									"key": "bookingDate",
+									"value": "2024-10-24"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
